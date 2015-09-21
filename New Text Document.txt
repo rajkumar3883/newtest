@@ -1,0 +1,5 @@
+doCreateRechargeRequest
+rechargerequest
+RECHARGE_REQUEST
+
+ALTER TABLE `users` ADD `updatedOn` TIMESTAMP on update CURRENT_TIMESTAMP  NULL AFTER `referralCode`;
