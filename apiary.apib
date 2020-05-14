@@ -387,3 +387,120 @@ post all unknown numbers from recent list
            "phoneNumbers": ["+911400850469"]
            }
 + Response 204 (application/json)
+
+## Friends [/api/v2/user/friends]
+### Get Friends [GET]
+Gets all of the user’s friends by userid
+
++ Response 200 (application/json)
+
+           {
+           "result": true,
+           "friends": [
+           {
+           "user": "591f48aca1877300043ff5f3",
+           "profilePicture": "https://cdn.vyng.me/public/someidhere/somepicture.png",
+           "profileVideo": {
+           "createdAt": "string",
+           "updatedAt": "string",
+           "videoUrls": {
+           "sd": "https://storage.googleapis.com/vyng-1148.appspot.com/5a0e14f792da34f825f84d8e/VID_20171216_010127_1513789158804.mp4",
+           "hd": "https://storage.googleapis.com/vyng-1148.appspot.com/5a0e14f792da34f825f84d8e/VID_20171216_010127_1513789158804.mp4",
+           "480p": "https://storage.googleapis.com/vyng-1148.appspot.com/5a0e14f792da34f825f84d8e/VID_20171216_010127_1513789158804.mp4",
+           "720p": "https://storage.googleapis.com/vyng-1148.appspot.com/5a0e14f792da34f825f84d8e/VID_20171216_010127_1513789158804.mp4",
+           "sd_share": "https://storage.googleapis.com/vyng-1148.appspot.com/5a0e14f792da34f825f84d8e/VID_20171216_010127_1513789158804.mp4",
+           "sd_logo": "https://storage.googleapis.com/vyng-1148.appspot.com/5a0e14f792da34f825f84d8e/VID_20171216_010127_1513789158804.mp4"
+           },
+           "videoUrlsInfo": {
+           "sd": {
+           "height": "string",
+           "width": "string",
+           "resolution": "string"
+           },
+           "hd": {
+           "height": "string",
+           "width": "string",
+           "resolution": "string"
+           },
+           "480p": {
+           "height": "string",
+           "width": "string",
+           "resolution": "string"
+           },
+           "720p": {
+           "height": "string",
+           "width": "string",
+           "resolution": "string"
+           },
+           "sd_share": {
+           "height": "string",
+           "width": "string",
+           "resolution": "string"
+           },
+           "sd_logo": {
+           "height": "string",
+           "width": "string",
+           "resolution": "string"
+           }
+           },
+           "thumbnails": {
+           "small": "https://storage.googleapis.com/vyng-app-storage/public/0410dce3-23e7-4edc-8b7d-3cb816729407/0410dce3-23e7-4edc-8b7d-3cb816729407_640.jpg",
+           "large": "https://storage.googleapis.com/vyng-app-storage/public/0410dce3-23e7-4edc-8b7d-3cb816729407/0410dce3-23e7-4edc-8b7d-3cb816729407_640.jpg"
+           },
+           "thumbnailsInfo": {
+           "small": {
+           "height": "string",
+           "width": "string"
+           },
+           "large": {
+           "height": "string",
+           "width": "string"
+           }
+           }
+           },
+           "phoneNumbers": [
+           "+18183814070"
+           ],
+           "available": true
+           }
+           ]
+           }
+## Friends Details [/api/v2/user/friends/{friendId}]
+### Get Friends [GET]
+Gets all of the details of friend by friendId
+
++ Response 200 (application/json) 
+
+           {
+           "result": true,
+           "friend": {
+           "user": "5eb50e5e784d527d53906c07",
+           "name": "WhatsApp2",
+           "userName": "",
+           "phoneNumbers": ["+919315525446"],
+           "isRegistered": 0,
+           "profilePicture": "",
+           "profileVideo": {
+           "videoUrls": {
+            "sd": "https://cdn.vyng.me/public/3146639d-5e2d-4df1-b5d1-a773255ad907/3146639d-5e2d-4df1-b5d1-a773255ad907.mp4",
+            "sd_share": null,
+            "sd_logo": null,
+            "480p": "https://cdn.vyng.me/public/3146639d-5e2d-4df1-b5d1-a773255ad907/3146639d-5e2d-4df1-b5d1-a773255ad907.mp4",
+            "720p": null,
+            "hd": "https://cdn.vyng.me/public/3146639d-5e2d-4df1-b5d1-a773255ad907/3146639d-5e2d-4df1-b5d1-a773255ad907.mp4"
+            },
+           "thumbnails": {
+            "small": "https://cdn.vyng.me/public/3146639d-5e2d-4df1-b5d1-a773255ad907/3146639d-5e2d-4df1-b5d1-a773255ad907_320-1.jpg",
+            "large": "https://cdn.vyng.me/public/3146639d-5e2d-4df1-b5d1-a773255ad907/3146639d-5e2d-4df1-b5d1-a773255ad907_640-1.jpg"
+            },
+           "setBy": {
+            "name": "Raj Test",
+            "id": "5ebd04c528861c76f080979f",
+            "avatar": "https://storage.googleapis.com/tc-images-noneu/myview/1/f6ed6a745bd1738e175c9ccd14b8c47a/3"
+            },
+           "audio": {},
+           "emoji": []
+           },
+           "available": false
+           }
+           }
