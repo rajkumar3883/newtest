@@ -349,9 +349,13 @@ post cotacts to check friends userid's
            "v": ""
            }]
            }
-## Contacts [/api/v2/contacts?returnFriends=true]
+## Contacts [/api/v2/contacts{?returnFriends}]
++ Parameters
+    + returnFriends: true (boolean, optional)
+
 ### Saved Contacts [POST]
 post saved cotacts & returns friend list in response
+This API return friends from these uploaded contacts only. It checked all numbers uploaded agains user collection & return matched in friends.
 + Request (application/json)
             
            {
@@ -390,7 +394,9 @@ post all unknown numbers from recent list
 
 ## Friends [/api/v2/user/friends]
 ### Get Friends [GET]
-Gets all of the user’s friends by userid
+Gets all of the user’s friends by userid.
+
+It returns all friends for this user's synced contact book.
 
 + Response 200 (application/json)
 
