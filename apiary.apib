@@ -1,0 +1,389 @@
+FORMAT: 1A
+HOST: https://api-dev.vyng.me
+
+# OnBoarding
+
+During onboarding flow the below api's get called.
+
+## Audio [/api/v2/audio/]
+
+### List Audio Files[GET]
+
+Returns list of groups and audio files. These audio files used for audio selection option during set incoming/outgoing/suggested video.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "result": true,
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "groups": [
+                    {
+                        "sortOrder":1
+                        "groupId": "5dc9bee283c572024e601c64"
+                        "name": "Vibes"
+                        "items": [{
+        "audioId": "5dc9bfc783c572024e601c67",
+        "groupId": "5dc9bee283c572024e601c64",
+        "name": "Vyng Default",
+        "url": "https://cdn.vyng.me/audio/ringtones/vibes/Vyng%20Default.mp3?GoogleAccessId=content-manager%40vyng-1148.iam.gserviceaccount.com&Expires=1904629273&Signature=i8To7Ff4%2FdTlGNWqJPUG1M2S2lWqhuwKMUBkc7kKooy%2FBssgJrtTY1QBdhi4gdel92aw9jAHmU73OHJyrRuczZaMUuMs5ArXZ7itYGdlZPOuaB2cVN3Y6xn9QYXjd8%2By2Sg9JDkvwTHsOXUziF62jkvKo5w6t%2FmHtyQVH5%2BRjHI5CL%2BpefK0ncwiO3cHdgJXfq36yS871Gst6Mu4Oah2zvCeN0Tpjq0m%2FphTUXncDDUdy3IihH6R4vUxZP3soHEwXSYE%2FYKLFrBhKncwv2iiSc3X5bcqlWbNQTDj6OuqpsmcF3vJcCK7lVaQgJKkm2Fm0XTIRocc8XaGzK13k5c0Rw%3D%3D",
+        "image": "https://cdn.vyng.me/audio/images/vyng-default.png?GoogleAccessId=content-manager%40vyng-1148.iam.gserviceaccount.com&Expires=1904629273&Signature=EptFiZpmRBOCjjMapIzekl%2FAj4pD32FTqmQQKN8stRmd%2BnPIwqbbpx1MtjA3l%2FuqMyx5uKN3v1%2FM8h93EerFb%2FcHizSWGZNEemkc6Z3r%2FtHtzPq13qs9tI03QerokRtyJDqRGV%2BTQE4upjKJM7jbw%2FoBvzqSQJ4U6L3GRdBrhhGvciSQKyuBdUGQPlinYF0amyQ0zZAUEs8F3YAS7UT5ivl3We3eU61fPzkIcySk0JXIRFGO5q6dWxOfE82dY6dWvZvGoZ3faebwN9Phv3tYl%2BpXpBGpuaHcY1k2wRXwwfOvXka8WBhGj%2B1AqKp11WG36FUTbVm2Q%2BL61w6WCGV4LA%3D%3D",
+        "version": 1,
+        "isDefault": true
+        },
+        {
+        "audioId": "5dce8932d53b94024e354d39",
+        "groupId": "5dc9bee283c572024e601c64",
+        "name": "Arcade",
+        "url": "https://cdn.vyng.me/audio/ringtones/vibes/Arcade.mp3?GoogleAccessId=content-manager%40vyng-1148.iam.gserviceaccount.com&Expires=1904629273&Signature=mGbDQbe5%2BD9YJ5GAcdJW09zrgC4KkW7kn2YfPs8T%2FoEPYAKXVJMHSYvWLxiK4ceEQuLTGnsmGNuAx7fiYH%2BZbb1jhmYBPKsu6Ff%2FX3XciX87SRWUXFbIGlGSksGy%2FvXUkWtAtHZN4M4dRb41fcli4aC%2FkwzvmcQCRd60RVvwEb%2BKSGpge%2BvuEZ2zBRvUcKYziG5IaXMhgsiQYiLT5%2Bys28EAiEH5TPA0RRPM7DLnGQHM48F4ygZbS%2Bm0vBlGperXfcUDUkYqnMc%2FhLf4orCP6TOUh1dN6n6dA4f94aGyxY2BcDaUekJAXzaNv4OZbFC1COL88msrbOFAkxJ7T6fvoA%3D%3D",
+        "image": "https://cdn.vyng.me/audio/images/arcade.png?GoogleAccessId=content-manager%40vyng-1148.iam.gserviceaccount.com&Expires=1904629273&Signature=Kr3b7udCtkpuHl9u2N%2Bze%2F8frrKbn7epgcJAM6zl%2B8NVyD94%2FA6lFMjjXBSGIfzBtMCRVjU1lxIHlRBSg%2FS2Fp5aKfTxEog5M09vdU7elzulAI5csJWtakkp2%2B4js2OGOWTDP6XsxejN7HLZ%2BpEYAf2qeOBR7iNCRoaQg40QIVeEfeH9M53tbOiCgkGQELDiajjePIoVWYo4dkEV5hdHWZvvc5AJheljZuD2ZSKoZCZDtMTEXhAo3vc%2F53pIiKbi9TtlHquZoruaGDM3xJe3lMWAOXYxMLHD6sY4unTiCPB94mZohsF9vD%2FOKGCXkexzS8BHe%2BPWojw3WoNV0Pxblg%3D%3D",
+        "version": 1,
+        "isDefault": false
+        }]
+        },
+        {
+        "sortOrder": 2,
+        "groupId": "5dc9bf8483c572024e601c65",
+        "name": "Gagan",
+        "items": [{
+        "audioId": "5dce8d21d53b94024e354d46",
+        "groupId": "5dc9bf8483c572024e601c65",
+        "name": "2020",
+        "url": "https://cdn.vyng.me/audio/ringtones/gagan/2020.mp3?GoogleAccessId=content-manager%40vyng-1148.iam.gserviceaccount.com&Expires=1904629273&Signature=H%2BagYGmoen5AE6Sfrpr%2B1ICnA5eriJbHM%2FMJ7FwAaxPRPQUn0XRlFtrya0fcGJJwgCK%2FOQim7V6AHIlSGe%2FOCOZmBOtp0BnVQ9d4FkV3UF1lEX80LTPs2sS3LvSn6vy3zZpoguvLPb3uw7M6TgGfs%2BOK5Sg6SqRu8oSAkMBrP0v0KAjI25Uu6xc9Lp%2Bc%2BrpwENa6EtJlPmZRiNEHu2n%2BFPeUNm3HIwSQSIfbTJb83NUzLhK%2Bb%2BSlBdTKpkIaHEwIU62WZFpUo3GMxTttrUyA7sNOpc0DINFBnY7k1QlJW76wPo1kh7Qw5%2FYLToJEBEstEKLQ%2FKHz8n3JwcxFko3OmQ%3D%3D",
+        "image": "https://cdn.vyng.me/audio/images/2020.png?GoogleAccessId=content-manager%40vyng-1148.iam.gserviceaccount.com&Expires=1904629273&Signature=Xr3s%2FFYR5ALyQxm973Evde5RKTMUUd36qc03A5Uc1z%2BcA55vSCzFkX%2B8SDYPjmeRKwoyehEDpJWiS%2FebIx5sJDbgj%2Bxwr1VG3gYIKdaKForIvaEIv0jQaOV%2B0hf4Z2vKBZ8Rw0NAtNV0kzLWhahnTZeNwIJBLa%2B3eQjmlk%2FoTDa7WPyBMXOZTUyU0KBfMBF%2BYNG16yMr7DyJzQT2440hSVQRWwEopDSrhAUTsrnvzT67EHtYaN8%2BpDBBh4%2F1dneXFq5lc1V%2Fafa9gOLsZOfjQBBU3lcr5V0K1xOD6Rs90mEaBJGiXpvdAxa%2F8iS60synp54uGzWL60N88oHSS20CIA%3D%3D",
+        "version": 1,
+        "isDefault": false
+        },
+        {
+        "audioId": "5dce8d6dd53b94024e354d47",
+        "groupId": "5dc9bf8483c572024e601c65",
+        "name": "Bombay to Brazil",
+        "url": "https://cdn.vyng.me/audio/ringtones/gagan/Bombay%20to%20Brazil.mp3?GoogleAccessId=content-manager%40vyng-1148.iam.gserviceaccount.com&Expires=1904629273&Signature=DqlgsVDDdSJHEI4FpElfQW84UhPst3Dn%2Bu6Ra2PiTyha96tUbv7tQdnZf76%2FqBmYKWRaTIFX6lr8Yp%2BlorOKkKRcew13hWmdYJceVqqvdwpRH7rrHsxk1Rn8sdowV%2FicLd6E2DYRTUrkd68kxMuHfFx179DOwMhKYyiN8cevkTCaxycKnDp08rg6kBc%2Fglq50y2sw3Cjmk%2FAJmfklG5tJ4%2FBXrf0QxLSVy4ixNTxqkOPnLZWpVC%2BYxvMKnULGLpnrYME8Zpk4w4MKpK%2FBjTX8ihdC%2FIjH0hTL%2Bg9tSDhz%2BSYev0wVDXSChTQ10bc2PNbTy1VaZEnXHEeHIM330j6JQ%3D%3D",
+        "image": "https://cdn.vyng.me/audio/images/bombay-to-brazil.png?GoogleAccessId=content-manager%40vyng-1148.iam.gserviceaccount.com&Expires=1904629273&Signature=PfMEwAB2QmCBCwyWt%2FwSBanC9NREVPOUz%2BpBWTz73O8BYl9c9mMsoHzvvzD3U%2FYEZeauSGeSmBoWmEwSS75qSlOQcz1NU%2BVRxdMKGlUZaWgyTsxdORLZBft2cknOWpHFxpptEDtgwEs%2FNE6Ss2oZVwxxt43ZVC92dHvXnOE7s0dc8Y7Lcue5rrMthCxwaAhjnVHrQ5xTMVw4UeO1E5LVZOyYX8%2BjSxDd8yY1jBit%2Fl0bcVaQ%2Bxc6%2FA3myYlAcxE8Op2qQxbXupvdMhvjqUUKWjPKhUXJGAKwlL1eMb4NYKOjePLgJJ0b8M87zzmLoOByqCHYBnNODz3BWRMDqcQA7Q%3D%3D",
+        "version": 1,
+        "isDefault": false
+        }
+        ]}
+                ]
+            }
+        ]
+        
+## Media [/api/v2/media/channels]
+### List of channels [GET]
+
+This gets the list of channels and media.
+
++ Response 200 (application/json)
+
+            {
+            "tileChannel": "59235e1bf36d285f678a4aad",
+            "categories": [{
+            "index": 0,
+            "title": "Popular Near Me",
+            "channels": ["5b071b2cabcc1f688cf3ebfa", "5953faeb05a4f10012d354fb"]
+            }, {
+            "index": 2,
+            "title": "Inspiring",
+            "channels": ["59235dd2f36d285f678a4a94", "5af61d54abcc1f688cf35579", "59235d90f36d285f678a49b1", "59235e3ff36d285f678a4ac1", "59235e66f36d285f678a4ac8", "59236665f36d285f678a522f"]
+            }],
+            "result": true,
+            "channels": [{
+            "owner": "vyng",
+            "playAsRinger": true,
+            "type": "public",
+            "index": 10,
+            "title": "Vyngmojis",
+            "outgoing": true,
+            "updatedAt": "2018-06-10T23:55:46.327Z",
+            "iconUrl": null,
+            "channelId": "5df1f53cb8af3c758c09044e",
+            "media": [{
+            "status": "enabled",
+            "thumbnails": {
+             "large": ["https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/vyng%2F2742e8a7-1f10-4925-8178-afdedc9290c8%2Fthumbnail-big-2742e?generation=1579900840460639&alt=media"],
+             "small": ["https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/vyng%2F2742e8a7-1f10-4925-8178-afdedc9290c8%2Fthumbnail-small-2742e?generation=1579900840440685&alt=media"]
+            },
+            "tags": ["Vyngmojis"],
+            "timestamp": 1579900761221,
+            "updated_at": 1579900840888,
+            "useAudio": false,
+            "value": 0,
+            "videoId": "2742e8a7-1f10-4925-8178-afdedc9290c8",
+            "videoUrl": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/vyng%2F2742e8a7-1f10-4925-8178-afdedc9290c8%2Fhd-2742e?generation=1579900840755414&alt=media",
+            "videoUrls": {
+              "sd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/vyng%2F2742e8a7-1f10-4925-8178-afdedc9290c8%2Fhd-2742e?generation=1579900840755414&alt=media",
+              "sd_share": null,
+              "sd_logo": null,
+              "hd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/vyng%2F2742e8a7-1f10-4925-8178-afdedc9290c8%2Fhd-2742e?generation=1579900840755414&alt=media",
+              "480p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/vyng%2F2742e8a7-1f10-4925-8178-afdedc9290c8%2Fhd-2742e?generation=1579900840755414&alt=media",
+              "720p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/vyng%2F2742e8a7-1f10-4925-8178-afdedc9290c8%2Fhd-2742e?generation=1579900840755414&alt=media"
+             }
+            }]
+            }]
+        }
+## Social Login->Facebook [/api/v2/oauth/fb?access_token=]
+### Facebook Login [GET]
+
+This api get called when user choose to login using Facebook
+
++ Response 200 (application/json)
+
+            {
+            "result": true,
+            "id": "5e95c6c828999a207ca9485e",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTVjNmM4Mjg5OTlhMjA3Y2E5NDg1ZSIsImlhdCI6MTU4OTQwMjc5N30.2KkhUtBQBE89t8QeFj3nat4aUC-JEp8yhrLPTA5nE7Q"
+            }
+## Social Login->Google  [/api/v2/oauth/google/callback?code=&scope=email%2Bprofile]
+### Google Login [GET]
+
+This api get called when user choose to login using Google
+
++ Response 200 (application/json)
+
+            {
+            "result": true,
+            "id": "5e95c6c828999a207ca9485e",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTVjNmM4Mjg5OTlhMjA3Y2E5NDg1ZSIsImlhdCI6MTU4OTQwMjc5N30.2KkhUtBQBE89t8QeFj3nat4aUC-JEp8yhrLPTA5nE7Q"
+            } 
+## Social Login->Snapchat [/api/v2/oauth/snapchat]
+### Snapchat Login [POST]
+
+This api get called when user choose to login using Snapchat
++ Request (application/json)
+
+            {
+            "displayName": "JSeven Vyng",
+            "externalId": "CAESIPK4H8n1qMvvb2yk7qw08w6yvdJDEvUqiGQAolAdnoeR"
+            }
+
++ Response 200 (application/json)
+
+            {
+            "result": true,
+            "id": "5e95c6c828999a207ca9485e",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTVjNmM4Mjg5OTlhMjA3Y2E5NDg1ZSIsImlhdCI6MTU4OTQwMjc5N30.2KkhUtBQBE89t8QeFj3nat4aUC-JEp8yhrLPTA5nE7Q"
+            }  
+            
+## Social Login->TrueCaller [/api/v2/phone/tc]
+### TrueCaller Login [POST]     
+This api get called when user choose to login using TrueCaller
+
++ Request (application/json)
+
+            {
+             "profile": {
+             "avatar": "https://storage.googleapis.com/tc-images-noneu/myview/1/f6ed6a745bd1738e175c9ccd14b8c47a/3",
+             "email": "samsungj7vyng@gmail.com",
+             "firstName": "Raj",
+             "lastName": "Test",
+             "payload": "eyJyZXF1ZXN0Tm9uY2UiOiJiM2MxYzgyNC1jODg5LTQ3YmItYjczNS1lMmU4ZDk1ZDI4ZDkiLCJyZXF1ZXN0VGltZSI6MTU4OTQwMzUwNSwicGhvbmVOdW1iZXIiOiIrOTE5MzU1NDI0MTA0IiwiZmlyc3ROYW1lIjoiUmFqIiwibGFzdE5hbWUiOiJUZXN0IiwiZ2VuZGVyIjoiTiIsImNvdW50cnlDb2RlIjoiSU4iLCJlbWFpbCI6InNhbXN1bmdqN3Z5bmdAZ21haWwuY29tIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3RjLWltYWdlcy1ub25ldS9teXZpZXcvMS9mNmVkNmE3NDViZDE3MzhlMTc1YzljY2QxNGI4YzQ3YS8zIiwiY29tcGFueU5hbWUiOiJWeW5nIiwidHJ1ZU5hbWUiOnRydWUsImFtYmFzc2Fkb3IiOmZhbHNlfQ==",
+             "phoneNumber": "+919355424104",
+             "signature": "b5x5XmJFx9J652id0dkKkO/EMhXnxWL31e2DTXYUIqoo2QbL3MFPfPZSTXVjtwjlCKYwuzGpy16weehd3sR5iiqniGhEv7oxZYZpm561PEADAJvwNsgWakxezKzue7gAhZLtjFc2oBA6z0jfwfrAvgtUqJzHEeL6Qf3BZWmHaNA=",
+             "signatureAlgorithm": "SHA512withRSA"
+             }
+            }
+
++ Response 200 (application/json)
+
+            {
+            "result": true,
+            "id": "5e95c6c828999a207ca9485e",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTVjNmM4Mjg5OTlhMjA3Y2E5NDg1ZSIsImlhdCI6MTU4OTQwMjc5N30.2KkhUtBQBE89t8QeFj3nat4aUC-JEp8yhrLPTA5nE7Q"
+            }  
+
+## OTP Generate [/api/v2/phone/code/generate]
+### Call/SMS Generate [POST] 
+
+For call use type "AUTO_CALL" & for sms use "SMS"
++ Request (application/json)
+
+            {
+            "phoneNumber": "+919355424104",
+            "type": "AUTO_CALL",
+            "signature": "c4e17b7508400e46f486a19d8c6f458e6353eabb"
+            }
++ Response 200 (application/json)
+
+            {
+            "result": true,
+            "testCode": "+911206824469"
+            }
+## OTP Verify [/api/v2/phone/code/verify]
+### Call/SMS Verify [POST]
+
++ Request (application/json)
+            
+            {
+            "code": "5844",
+            "phoneNumber": "+919355424104",
+            "type": "SMS",
+            "signature": "930ef14fcb42789fffe3a6ce82cb65a0b5b71b63"
+            }
++ Response 200 (application/json)
+
+            {
+            "result": true
+            }
+## After Auth [/api/v2/user/profile]
+### User Profile [GET]
+
+Return user profile details from user collection
++ Response 200 (application/json)
+
+            {
+            "result": true,
+            "profilePicture": "https://lh5.googleusercontent.com/-_cPvXMMdPEg/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucn2cK6DqCeNufInFD3vOGGuWZHqZg/photo.jpg",
+            "profileVideo": {
+            "videoUrls": {
+            "sd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fhd-027e4?generation=1589368367067403&alt=media",
+            "sd_share": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fcommercial-027e4?generation=1589368413445721&alt=media",
+            "sd_logo": null,
+            "hd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fhd-027e4?generation=1589368367067403&alt=media",
+            "480p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fhd-027e4?generation=1589368367067403&alt=media",
+            "720p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fhd-027e4?generation=1589368367067403&alt=media"
+            },
+            "setBy": {},
+            "audio": {},
+            "thumbnails": {
+            "small": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fthumbnail-small-027e4?generation=1589368366945360&alt=media",
+            "large": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fthumbnail-big-027e4?generation=1589368366916753&alt=media"
+            },
+            "emoji": [],
+            "updatedAt": "2020-05-13T11:12:47.829Z"
+            },
+            "phoneNumbers": ["+919355424104"],
+            "authProviders": [{
+            "id": "114445193824150967284",
+            "name": "google",
+            "email": "sumsungj7vyng@gmail.com"
+            }, {
+            "id": "243cf632-91fb-4c85-b768-7941e4b9e575",
+            "name": "otp",
+            "phoneNumber": "+919355424104"
+            }]
+            }
+## After Auth [/api/v2/user/profile?clientData=1]
+### User clientData [GET]
+
+Returns user globle & ringtones along with user profie info from user collection
++ Response 200 (application/json)
+
+            {
+            "result": true,
+            "profilePicture": "https://lh5.googleusercontent.com/-_cPvXMMdPEg/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucn2cK6DqCeNufInFD3vOGGuWZHqZg/photo.jpg",
+            "profileVideo": {
+            "videoUrls": {
+            "sd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fhd-027e4?generation=1589368367067403&alt=media",
+            "sd_share": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fcommercial-027e4?generation=1589368413445721&alt=media",
+            "sd_logo": null,
+            "hd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fhd-027e4?generation=1589368367067403&alt=media",
+            "480p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fhd-027e4?generation=1589368367067403&alt=media",
+            "720p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fhd-027e4?generation=1589368367067403&alt=media"
+            },
+            "setBy": {},
+            "audio": {},
+            "thumbnails": {
+            "small": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fthumbnail-small-027e4?generation=1589368366945360&alt=media",
+            "large": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebbd5c328861c76f080979c%2F027e4ffa-ddfb-4a7a-b294-055022431738%2Fthumbnail-big-027e4?generation=1589368366916753&alt=media"
+            },
+            "emoji": [],
+            "updatedAt": "2020-05-13T11:12:47.829Z"
+            },
+            "phoneNumbers": ["+919355424104"],
+            "authProviders": [{
+            "id": "114445193824150967284",
+            "name": "google",
+            "email": "sumsungj7vyng@gmail.com"
+            }, {
+            "id": "243cf632-91fb-4c85-b768-7941e4b9e575",
+            "name": "otp",
+            "phoneNumber": "+919355424104"
+            }],
+            "clientData": {
+            "customVyngtone": [{
+            "phoneNumber": "+919315525446",
+            "id": "3146639d-5e2d-4df1-b5d1-a773255ad907"
+            }],
+            "globalVyngtone": {
+            "id": "3146639d-5e2d-4df1-b5d1-a773255ad907"
+            }
+            }
+            }
+## Set Device Info [/api/v2/satellite/installation]
+### installation [POST]
+Send device info to server
++ Request (application/json)
+            
+            {
+            "installReferrerData": "",
+            "country": "IN",
+            "appVersion": 2020051301,
+            "phoneNumber": "+919355424104",
+            "vyngDeviceToken": "eizoJlUUw80:APA91bEm7WZ26y_ipHuBEAvniYINwk4IbSWgFHeWRXgw5e5LpYW5oaCJog9HC5dHf1l21kqPy0ICnaDBNJMAz1k9KVcfANdX-5Qy6Yfme3tMvlG_QHXVW5tXSJOsEvDiNX-MdWk7mg-g",
+            "osVersion": "9",
+            "appName": "Vyng - Dev",
+            "deviceName": "samsung - SM-J730FM",
+            "deviceId": "0f740c515236a7dc"
+            }
++ Response 200 (application/json)
+
+            {
+            "result": true,
+            "region": "",
+            "country": ""
+            }    
+## Contacts [/api/v2/satellite/contacts]
+### satellite Contacts [POST]
+post cotacts to check friends userid's
++ Request (application/json)
+            
+           {
+           "phones": ["+919876543211", "+13053897285"]
+           }
++ Response 200 (application/json)            
+
+           {
+           "result": true,
+           "contacts": [{
+           "p": "+919871512345",
+           "v": ""
+           }]
+           }
+## Contacts [/api/v2/contacts?returnFriends=true]
+### Saved Contacts [POST]
+post saved cotacts & returns friend list in response
++ Request (application/json)
+            
+           {
+           "contacts": [{
+           "name": "Test2",
+           "phoneNumber": "+13053897285"
+           }]}
++ Response 200 (application/json)            
+
+           {
+           "result": true,
+           "version": 2020051301,
+           "friends": [{
+           "user": "5da96f79543cd83aba2037ab",
+           "phoneNumbers": ["+919871512345"],
+           "isRegistered": 1,
+           "profileVideo": {
+           "videoUrls": {},
+           "thumbnails": {},
+           "setBy": {},
+           "audio": {},
+           "emoji": []
+           },
+           "profilePicture": null
+           }]
+           }
+## Contacts [/api/v2/unknown-numbers]
+### Unknown Numbers [POST]
+post all unknown numbers from recent list
++ Request (application/json)
+            
+           {
+           "phoneNumbers": ["+911400850469"]
+           }
++ Response 204 (application/json)
