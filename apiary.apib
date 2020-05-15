@@ -121,6 +121,66 @@ This gets the list of channels and media.
             }]
             }]
         }
+## List of Media from any channel [/api/v2/media/channel/{channelId}{?limit,page}]
++ Parameters
+    + channelId: 59235e1bf36d285f678a4aad (string, required)
+    + limit: 20 (number, required)
+    + page: 1 (number, required)
+    
+### List of Media from any channels [GET]
+
+This gets the list media from any channel.
+
++ Response 200 (application/json)
+
+        {
+        "result": true,
+        "channel": {
+        "owner": "vyng",
+        "playAsRinger": true,
+        "index": 1,
+        "title": "Trending",
+        "type": "public",
+        "updatedAt": "2018-07-11T00:27:13.113Z",
+        "iconUrl": null,
+        "media": [{
+          "status": "enabled",
+          "thumbnails": {
+            "large": ["https://cdn.vyng.me/public/3146639d-5e2d-4df1-b5d1-a773255ad907/3146639d-5e2d-4df1-b5d1-a773255ad907_640-1.jpg"],
+            "small": ["https://cdn.vyng.me/public/3146639d-5e2d-4df1-b5d1-a773255ad907/3146639d-5e2d-4df1-b5d1-a773255ad907_320-1.jpg"]
+            },
+          "tags": [],
+          "timestamp": 1537252268268,
+          "updated_at": 1559925428582,
+          "useAudio": true,
+          "value": 61,
+          "videoId": "3146639d-5e2d-4df1-b5d1-a773255ad907",
+          "videoUrl": "https://cdn.vyng.me/public/3146639d-5e2d-4df1-b5d1-a773255ad907/3146639d-5e2d-4df1-b5d1-a773255ad907.mp4",
+          "videoUrls": null,
+          "artist": "",
+          "song": ""
+          },
+          {
+          "status": "enabled",
+          "thumbnails": {
+            "large": ["https://cdn.vyng.me/public/91dde516-6962-4074-8210-c945e959bfb8/91dde516-6962-4074-8210-c945e959bfb8_640-1.jpg"],
+            "small": ["https://cdn.vyng.me/public/91dde516-6962-4074-8210-c945e959bfb8/91dde516-6962-4074-8210-c945e959bfb8_320-1.jpg"]
+            },
+          "tags": [],
+          "timestamp": 1537252407776,
+          "updated_at": 1550565946685,
+          "useAudio": true,
+          "value": 55,
+          "videoId": "91dde516-6962-4074-8210-c945e959bfb8",
+          "videoUrl": "https://cdn.vyng.me/public/91dde516-6962-4074-8210-c945e959bfb8/91dde516-6962-4074-8210-c945e959bfb8.mp4",
+          "videoUrls": null,
+          "artist": "",
+          "song": ""
+          }],
+        "channelId": "59235e1bf36d285f678a4aad"
+        }
+        }
+       
 ## Social Login->Facebook [/api/v2/oauth/fb?access_token=]
 ### Facebook Login [GET]
 
@@ -224,6 +284,23 @@ For call use type "AUTO_CALL" & for sms use "SMS"
             {
             "result": true
             }
+## FCM token [/api/v2/user/fcm]
+
+Sets the user’s FCM token for push notifications.
+
+### Set User's FCM token [POST]
+
++ Request (application/json)
+            
+            {
+           "fcmToken": "string"
+            }
++ Response 200 (application/json)
+
+            {
+            "result": true
+            }            
+            
 ## After Auth [/api/v2/user/profile]
 ### User Profile [GET]
 
