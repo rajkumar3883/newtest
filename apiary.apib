@@ -5,7 +5,7 @@ HOST: https://api-dev.vyng.me
 
 During onboarding flow the below api's get called.
 
-## Audio [/api/v2/audio/]
+## List Audio Files [/api/v2/audio/]
 
 ### List Audio Files[GET]
 
@@ -68,7 +68,7 @@ Returns list of groups and audio files. These audio files used for audio selecti
             }
         ]
         
-## Media [/api/v2/media/channels]
+## List channels [/api/v2/media/channels]
 ### List of channels [GET]
 
 This gets the list of channels and media.
@@ -301,7 +301,7 @@ Sets the user’s FCM token for push notifications.
             "result": true
             }            
             
-## After Auth [/api/v2/user/profile]
+## Get User Profile [/api/v2/user/profile]
 ### User Profile [GET]
 
 Return user profile details from user collection
@@ -339,7 +339,7 @@ Return user profile details from user collection
             "phoneNumber": "+919355424104"
             }]
             }
-## After Auth [/api/v2/user/profile?clientData=1]
+## Get User Profile with ClientData [/api/v2/user/profile?clientData=1]
 ### User clientData [GET]
 
 Returns user globle & ringtones along with user profie info from user collection
@@ -409,7 +409,7 @@ Send device info to server
             "region": "",
             "country": ""
             }    
-## Contacts [/api/v2/satellite/contacts]
+## Post Satellite Contacts [/api/v2/satellite/contacts]
 ### satellite Contacts [POST]
 post cotacts to check friends userid's
 + Request (application/json)
@@ -426,7 +426,7 @@ post cotacts to check friends userid's
            "v": ""
            }]
            }
-## Contacts [/api/v2/contacts{?returnFriends}]
+## Post Contacts [/api/v2/contacts{?returnFriends}]
 + Parameters
     + returnFriends: true (boolean, optional)
 
@@ -459,7 +459,7 @@ This API return friends from these uploaded contacts only. It checked all number
            "profilePicture": null
            }]
            }
-## Contacts [/api/v2/unknown-numbers]
+## Unknown Numbers [/api/v2/unknown-numbers]
 ### Unknown Numbers [POST]
 post all unknown numbers from recent list
 + Request (application/json)
@@ -469,7 +469,7 @@ post all unknown numbers from recent list
            }
 + Response 204 (application/json)
 
-## Friends [/api/v2/user/friends]
+## Get Friends [/api/v2/user/friends]
 ### Get Friends [GET]
 Gets all of the user’s friends by userid.
 
@@ -548,8 +548,8 @@ It returns all friends for this user's synced contact book.
            }
            ]
            }
-## Friends Details [/api/v2/user/friends/{friendId}]
-### Get Friends [GET]
+## Get Friend Details [/api/v2/user/friends/{friendId}]
+### Get Friend Details [GET]
 Gets all of the details of friend by friendId
 
 + Response 200 (application/json) 
@@ -587,3 +587,451 @@ Gets all of the details of friend by friendId
            "available": false
            }
            }
+           
+## Incoming Video Ringtone [/api/v2/media/media/set/{mediaId}]
+
+This api get called when you set a server media as yoiur incoming video ringtone.
+It set that media id against your userid.
+
+### Set Server Media as Incoming Video Ringtone [PUT]
+
++ Request
+    + Headers
+
+            Authorization: Bearer authorization token obtained during oauth
+
++ Response 200 (application/json)
+        
+        {
+        "result": true
+        }
+
++ Response 400 (text/plain)
+
+        Bad Request. Missing required param (contact)
+
++ Response 401 (text/plain)
+
+        Unauthorized request
+        
++ Response 404 (text/plain)
+
+        Media cannot be found
+
+## Profile Api [/api/v2/user/profile{?clientData,rand}]
++ Parameters
+    + clientData: 1 (int, optional)
+    + rand: 12342 (timestamp, optional)
+
+### Get User profile Info [GET]
+
+This api get called just after login to get user profile info from server. This api also get called on each app opening to 
+
++ Response 200 (application/json)
+
+        {
+        "result": true,
+        "profilePicture": "https://lh5.googleusercontent.com/-_cPvXMMdPEg/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucn2cK6DqCeNufInFD3vOGGuWZHqZg/photo.jpg",
+        "profileVideo": {
+        "videoUrls": {
+         "sd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebd254228861c76f08097a0%2Fa8346e7c-4d93-4d4a-b3a5-a8602c3749aa%2Fhd-a8346?generation=1589454766030002&alt=media",
+         "sd_share": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebd254228861c76f08097a0%2Fa8346e7c-4d93-4d4a-b3a5-a8602c3749aa%2Fcommercial-a8346?generation=1589454816045270&alt=media",
+         "sd_logo": null,
+         "hd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebd254228861c76f08097a0%2Fa8346e7c-4d93-4d4a-b3a5-a8602c3749aa%2Fhd-a8346?generation=1589454766030002&alt=media",
+         "480p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebd254228861c76f08097a0%2Fa8346e7c-4d93-4d4a-b3a5-a8602c3749aa%2Fhd-a8346?generation=1589454766030002&alt=media",
+         "720p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebd254228861c76f08097a0%2Fa8346e7c-4d93-4d4a-b3a5-a8602c3749aa%2Fhd-a8346?generation=1589454766030002&alt=media"
+         },
+        "setBy": {},
+        "audio": {},
+        "thumbnails": {
+         "small": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebd254228861c76f08097a0%2Fa8346e7c-4d93-4d4a-b3a5-a8602c3749aa%2Fthumbnail-small-a8346?generation=1589454765767241&alt=media",
+         "large": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5ebd254228861c76f08097a0%2Fa8346e7c-4d93-4d4a-b3a5-a8602c3749aa%2Fthumbnail-big-a8346?generation=1589454765778354&alt=media"
+        },
+        "emoji": [],
+        "updatedAt": "2020-05-14T11:12:46.820Z"
+        },
+        "phoneNumbers": ["+919355424104"],
+        "authProviders": [{
+        "id": "114445193824150967284",
+        "name": "google",
+        "email": "sumsungj7vyng@gmail.com"
+        }, {
+        "id": "fdb5f8fb-943e-4bda-a248-985a32b35365",
+        "name": "otp",
+        "phoneNumber": "+919355424104"
+        }],
+        "clientData": {
+        "customVyngtone": [],
+        "globalVyngtone": {
+          "id": "3146639d-5e2d-4df1-b5d1-a773255ad907"
+          }
+        }
+        }
+### Set User profile Info [PUT]
+
+This api used in different diffrent ways.
+First this api used for setting media id in user profile when user sets any media as his incoming video ringtone or set a media for any contacts as suggested vyngid(custom video ringtone).
+These media ids get returned in get profile calls during reintsalls to restore these.
+
+Second this api used for setting user's outgoing video ringtone.
+
++ Request (application/json)
+
+        {
+         "clientData": {
+            "customVyngtone": [{
+            "phoneNumber": "+918586996900",
+            "id": "36de61b8-9723-415a-a6d9-4228aeb98f18"
+            }],
+            "globalVyngtone": {
+            "id": "3146639d-5e2d-4df1-b5d1-a773255ad907"
+            }    
+        },
+        "vyngDeviceToken": "eJO4AXZbpkc:APA91bGgJ_592ta5aWFVslELbF-7-8dUVoNkMgoLc1SF3AzWzYYRxqFAKQGYDMwQVdm2OBZX5-RZbcqY3C88aUQI3gJuxe6xmORXDxNZkxli9tEuJH2y6sQ7N1uwczMC4azWxFKfwKKW"
+        }
+        
++ Request (application/json)
+
+        {
+        "audioId": "5dce8932d53b94024e354d39",
+        "audioLevel": 72,
+        "emoji": [],
+        "friends": ["5da96f79543cd83aba2037ab", "5e2ad6300dc3cd6e86122a34", "5e61ef69282f3a598f28dcb4", "5e2189328fac5e6b68c9a6c2", "5e9d967428999a207ca94865", "5e2e9508c37320171a4595f6", "5dea2e5dc4eda6016b14e64c", "5eb50e5e784d527d53906c07"],
+        "profileVideo": {
+        "bucketName": "vyng-1148.appspot.com",
+        "path": "5ebd04c528861c76f080979f/mine_caller_id.mp4"
+        }
+        }
+        
++ Response 200 (application/json)
+
+        {
+        "result": true,
+        "videoUrl": ""
+        }
+## Suggested VyngID [/api/v2/user/suggested]    
+
+### Set server media as Suggested Video [POST]
+
+This api get called when a user sets a suggested video for his contact from his local folders.
+
++ Request (application/json)
+
+        {
+        "audioId": "5dce8932d53b94024e354d39",
+        "audioLevel": 50,
+        "firstName": "Whatsapp 2",
+        "lastName": " ",
+        "phoneNumber": "+919315525446",
+        "profileVideo": {
+        "bucket": "vyng-1148.appspot.com",
+        "path": "5ebd04c528861c76f080979f/trimmed1589446533600"
+        }
+        }
++ Response 200 (application/json)
+
+        {
+        "result": true
+        }
+        
++ Response 200 (application/json)
+
+        {
+        "result": false,
+        "responseCode": 1,
+        "error": "This business already has a video ringtone."
+        }
+        
++ Response 402 (application/json)
+
+        {
+        "result": true,
+        "error": "User exists with this phoneNumber. Cannot assign VyngId"
+        }    
+        
+## Suggested VyngID [/api/v2/user/suggested/videotone]    
+
+### Set local media as Suggested Video [POST]
+
+This api get called when a user sets a server media as suggested video for his contact.
+
++ Request (application/json)
+
+        {
+        "audioLevel": 0,
+        "firstName": "Business",
+        "lastName": "Test",
+        "phoneNumber": "+911400450536",
+        "videotoneId": "2f4b0601-fbbd-4dad-b762-90565d59f527"
+        }
++ Response 200 (application/json)
+
+        {
+        "result": true
+        }
+        
++ Response 200 (application/json)
+
+        {
+        "result": false,
+        "responseCode": 1,
+        "error": "This business already has a video ringtone."
+        }
+        
++ Response 402 (application/json)
+
+        {
+        "result": true,
+        "error": "User exists with this phoneNumber. Cannot assign VyngId"
+        }
+## Set Media View [/api/v2/media/view]    
+
+### Increase View Counter [POST]
+
+This api get called when a user watch medias from server channels. This api send all those media ids to update their view on server.
+
++ Request (application/json)
+
+        {
+        "views": ["3146639d-5e2d-4df1-b5d1-a773255ad907", "400a5f66-31b3-4ebc-a9e8-b8a77fcdf76b"]
+        }
++ Response 200 (application/json)
+
+        {
+        "result": true
+        }
+## Reports an inaccurate video [/api/v2/satellite/flagvideo]    
+
+### Report a Video [POST]
+
+Reports an inaccurate video ( channel or profile video-VyngID )
+
+When user report any video from server channels or VyngId from any user then this api get called.
+
++ Request (application/json)
+
+        {
+        "type": "profile_video",
+        "videoId": "5ebd6e9828861c76f08097a4/74563211-419b-417f-b5f4-efbff0646967/hd-74563"
+        }
++ Response 200 (application/json)
+
+        {
+        "result": true
+        }
+
+
+## Caller ID [/api/v2/callerid/{phoneNumber}{?callType}]
+
+Listing all the apis used for caller ID.
+
++ Parameters
+    + phoneNumber: +919876543210 (number, required)
+    + callType: INCOMING (string, optional)- INCOMING/OUTGOING
+
+### Caller ID Data [GET]
+
+This api used to fetch caller id information from server for a particular phone number
+
++ Request
+    + Headers
+
+            Authorization: Bearer authorization token obtained during oauth
+            
++ Response 200 (application/json)
+
+        Response for normal Number
+
+        {
+        "result": true,
+        "callerid": {
+          "id": "7fb5aa31dbdc43288c9712940e77fc06",
+          "phoneNumber": "+919876543210",
+          "name": "टेस्ट कॉन्टैक्ट",
+          "confirmLevel": 0,
+          "category": 0,
+          "spam": 0,
+          "count": 0,
+          "weight": 1,
+          "name1": "name 1",
+          "name2": "name 222",
+          "type": "personal",
+          "notspam": 0,
+          "spamRating": 0,
+          "video": {
+            "videoUrls": {},
+            "thumbnails": {}
+          }
+         }
+        }
+
++ Response 200 (application/json) 
+
+        Response for business Number
+        
+        {
+        "result": true,
+        "callerid": {
+        "id": "5ddb891816e4aa40a1b330d0",
+        "phoneNumber": "+911400450536",
+        "name": "Airtel",
+        "businessName": "Airtel",
+        "colorHex": "#DB3832",
+        "emoji1": "260e",
+        "emoji2": "1f4de",
+        "logo": "airtel",
+        "confirmLevel": 2,
+        "category": 0,
+        "spam": 0,
+        "count": 0,
+        "weight": 0,
+        "type": "premium",
+        "postCall": {
+          "enabled": true,
+          "bg": "https://res.cloudinary.com/demo/image/upload/castle.jpg",
+          "cType": "image/jpeg",
+          "b_text": "Click Here",
+          "b_link": "https://www.google.com/"
+          },
+        "notspam": 0,
+        "spamRating": 0,
+        "video": {
+          "videoUrls": {},
+          "thumbnails": {}
+          }
+         }
+        } 
+        
++ Response 200 (application/json) 
+
+        Response for Registered Number
+        
+        {       
+        "result": true,
+          "callerid": {
+          "id": "86c312620a0046009c2d839a13c42aeb",
+          "phoneNumber": "+919560226526",
+          "name": "Krishan Kant Gupta",
+          "confirmLevel": 2,
+          "category": 0,
+          "spam": 0,
+          "count": 1,
+          "weight": 10000,
+          "video": {
+            "videoUrls": {
+              "720p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5eb3d525784d527d53906bf2%2Fb9b1a21d-815c-45ce-ab84-1ec8fadca8fd%2Fhd-b9b1a?generation=1588937480923941&alt=media",
+              "480p": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5eb3d525784d527d53906bf2%2Fb9b1a21d-815c-45ce-ab84-1ec8fadca8fd%2Fhd-b9b1a?generation=1588937480923941&alt=media",
+              "hd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5eb3d525784d527d53906bf2%2Fb9b1a21d-815c-45ce-ab84-1ec8fadca8fd%2Fhd-b9b1a?generation=1588937480923941&alt=media",
+              "sd": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5eb3d525784d527d53906bf2%2Fb9b1a21d-815c-45ce-ab84-1ec8fadca8fd%2Fhd-b9b1a?generation=1588937480923941&alt=media"
+              },
+            "thumbnails": {
+              "large": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5eb3d525784d527d53906bf2%2Fb9b1a21d-815c-45ce-ab84-1ec8fadca8fd%2Fthumbnail-big-b9b1a?generation=1588937480723449&alt=media",
+              "small": "https://www.googleapis.com/download/storage/v1/b/vyng-videos-dev/o/5eb3d525784d527d53906bf2%2Fb9b1a21d-815c-45ce-ab84-1ec8fadca8fd%2Fthumbnail-small-b9b1a?generation=1588937480719835&alt=media"
+              }
+            },
+          "avatar": "",
+          "name1": "",
+          "name2": "",
+          "type": "personal",
+          "notspam": 0,
+          "spamRating": 0
+         }
+        }
+
+## Report CallerID [/api/v2/callerid/report]    
+
+### Report CallerID Data [POST]
+
+This api get called when a user report a callerId data by pressing that improve callerID button.
+
++ Request (application/json)
+
+        {
+        "phoneNumber": "+919876543210",
+        "name": "abc"
+        }
+        
++ Response 200 (application/json)
+        
+        {
+        "result": true
+        }
+        
+## Improve CallerID [/api/v2/contacts]    
+
+### Improve CallerID [POST]
+
+
+This api get called when a user report a callerId & suggest a new data by submitting the form.
+
++ Request (application/json)
+
+        {
+        "contacts": [{
+          "name": "hdhehd",
+          "phoneNumber": "+918447896156"
+          }],
+        "business": true
+        }
+        
++ Response 200 (application/json)
+        
+        {
+        "result": true,
+        "version": 2020050900
+        }
+
+## Report Spam [/api/v2/report-spam]    
+
+### Report a Number as Spam [POST]
+
+This api get called when a user report a number as spam number.
+
++ Request (application/json)
+
+        {
+        "phoneNumber": "+919876543210",
+        }
+        
++ Response 200 (application/json)
+        
+        {
+        "result": true
+        }
+
+## Report Not Spam [/api/v2/report-notspam]    
+
+### Report a Number as Not Spam [POST]
+
+This api get called when a user report a number as not spam number.
+
++ Request (application/json)
+
+        {
+        "phoneNumber": "+919876543210",
+        }
+        
++ Response 200 (application/json)
+        
+        {
+        "result": true
+        }
+
+## Report Postcall Ad [/api/v2/postcall/report]    
+
+### Report Postcall [POST]
+
+This api get called when a user report an ad from business post calls.
+
++ Request (application/json)
+
+        {
+        "phoneNumber": "+919876543210",
+        "url": "https://res.cloudinary.com/demo/image/upload/castle.jpg"
+        }
+        
++ Response 200 (application/json)
+        
+        {
+        "result": true
+        }
