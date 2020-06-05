@@ -723,7 +723,8 @@ Second this api used for setting user's outgoing video ringtone.
         "result": true,
         "videoUrl": ""
         }
-## Suggested VyngID [/api/v2/user/suggested]    
+        
+## Server Media as Suggested VyngID [/api/v2/user/suggested]    
 
 ### Set server media as Suggested Video [POST]
 
@@ -763,7 +764,7 @@ This api get called when a user sets a suggested video for his contact from his 
         "error": "User exists with this phoneNumber. Cannot assign VyngId"
         }    
         
-## Suggested VyngID [/api/v2/user/suggested/videotone]    
+## Local Media as Suggested VyngID [/api/v2/user/suggested/videotone]    
 
 ### Set local media as Suggested Video [POST]
 
@@ -798,6 +799,22 @@ This api get called when a user sets a server media as suggested video for his c
         "result": true,
         "error": "User exists with this phoneNumber. Cannot assign VyngId"
         }
+## Report Suggested VyngId [/api/v2/user/suggested/report]    
+
+### Increase View Counter [POST]
+
+This api get called when a user watch medias from server channels. This api send all those media ids to update their view on server.
+
++ Request (application/json)
+
+        {
+        "phoneNumber": "+911400450536"
+        }
++ Response 200 (application/json)
+
+        {
+        "result": true
+        }        
 ## Set Media View [/api/v2/media/view]    
 
 ### Increase View Counter [POST]
